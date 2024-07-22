@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "login-angular": {
+    "LoginAngular02": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/login-angular",
+            "outputPath": "dist/login-angular02",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "login-angular:build:production"
+              "buildTarget": "LoginAngular02:build:production"
             },
             "development": {
-              "buildTarget": "login-angular:build:development"
+              "buildTarget": "LoginAngular02:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "login-angular:build"
+            "buildTarget": "LoginAngular02:build"
           }
         },
         "test": {
