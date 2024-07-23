@@ -4,6 +4,26 @@
   secondaryBtnText="Signup Now"
 >
   <form [formGroup]="loginForm">
-    <app-primary-input/>
+    <!-- input email -->
+     <!-- tirei esse cara estava dando erro  formControlName="email" -->
+    <app-primary-input
+      label="Email address"
+      inputName="email"
+      type="email"
+      placeholder="89j8oli@gmail.com"
+    >
+      <img src="/assets/svg/email.svg" />
+    </app-primary-input>
+
+    <!-- input password -->
+     <!-- tirei esse cara estava dando erro  formControlName="password" -->
+    <app-primary-input
+      label="Your password"
+      inputName="password"
+      type="password"
+    >
+      <img src="/assets/svg/password.svg" />
+    </app-primary-input>
+    <span>Forgot password?</span>
   </form>
 </app-default-login-layout>
