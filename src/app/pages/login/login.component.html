@@ -2,10 +2,11 @@
   title="Login into your account"
   primaryBtnText="Login Now"
   secondaryBtnText="Signup Now"
+  (submit)="submit()"
 >
   <form [formGroup]="loginForm">
     <!-- input email -->
-     <!-- tirei esse cara estava dando erro  formControlName="email" -->
+    <!-- tirei esse cara estava dando erro  formControlName="email" -->
     <app-primary-input
       label="Email address"
       inputName="email"
@@ -16,7 +17,7 @@
     </app-primary-input>
 
     <!-- input password -->
-     <!-- tirei esse cara estava dando erro  formControlName="password" -->
+    <!-- tirei esse cara estava dando erro  formControlName="password" -->
     <app-primary-input
       label="Your password"
       inputName="password"
