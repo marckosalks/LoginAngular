@@ -1,26 +1,47 @@
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DefaultLoginLayoutComponent } from './../../components/default-login-layout/default-login-layout.component';
 import { Component } from '@angular/core';
-import { PrimaryInputComponent } from "../../components/primary-input/primary-input.component";
+import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
+import { Router } from '@angular/router';
+
+
+interface LoginForm {
+  email: FormControl,
+  password: FormControl
+}
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [DefaultLoginLayoutComponent, ReactiveFormsModule, PrimaryInputComponent],
+  imports: [
+    DefaultLoginLayoutComponent,
+    ReactiveFormsModule,
+    PrimaryInputComponent
+  ],
+  providers: [
+
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  loginForm!: FormGroup
+  loginForm!: FormGroup<LoginForm>;
 
-  constructor(){
+  constructor(
+    private router: Router,
+  ){
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(7)])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
 
   submit(){
+
     console.log(this.loginForm.value)
+  }
+
+  navigate(){
+    this.router.navigate(["signup"])
   }
 }
